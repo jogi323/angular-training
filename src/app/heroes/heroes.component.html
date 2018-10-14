@@ -1,0 +1,10 @@
+<div class="heros-list">
+  <h1 class="title"> {{title}}</h1>
+  <div>
+    <ul class="heroes">
+      <li *ngFor = "let hero of herosList">
+        <span class="badge">{{hero.id}}</span> {{hero.name}}
+      </li>
+    </ul>
+  </div>
+</div>
