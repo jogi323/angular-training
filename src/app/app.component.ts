@@ -17,6 +17,6 @@ export class AppComponent {
   }
 
   submit() {
-
+    console.log('object');
   }
 }
