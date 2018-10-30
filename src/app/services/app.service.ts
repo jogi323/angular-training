@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HEROES } from '../herosList';
 import { Hero } from '../herosList';
+import { HttpClient } from '@angular/common/http';
 
 import { Observable, of } from 'rxjs';
 
@@ -9,9 +10,24 @@ import { Observable, of } from 'rxjs';
 })
 export class AppService {
   public name = 'jogi';
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   getHeroesList(): Observable<Hero[]> {
     return of(HEROES);
+  }
+
+  getPosts(): Observable<any> {
+    return this.http.get('https://jsonplaceholder.typicode.com/posts');
+  }
+
+  addPosts() {
+    return this.http.post('https://jsonplaceholder.typicode.com/posts', { title: 'Angular training', body: 'Angular 6 training classes' });
+  }
+
+  updatePost() {
+    return this.http.put('https://jsonplaceholder.typicode.com/posts/11', {id: 1, title: 'Angular training', body: 'Angular 6 training classes' });
+  }
+  deletePost() {
+    return this.http.delete('https://jsonplaceholder.typicode.com/posts/11');
   }
 }

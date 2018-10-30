@@ -12,15 +12,18 @@ export class HeroesComponent implements OnInit {
   public herosList: any[] = [];
   public title = 'CRICKET HEROES';
   public selectedHero: Object;
+  public myName: string;
 
   constructor(private appService: AppService) {
     this.data = {
       username: 'jogi',
       passowrd: ''
     };
+    console.log(this.appService.name);
    }
 
   ngOnInit() {
+    this.myName = this.appService.name;
     this.appService.getHeroesList().subscribe((res) => {
       this.herosList = res;
     });
