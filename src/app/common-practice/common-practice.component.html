@@ -1,0 +1,37 @@
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <h1 *ngIf="showName">My name is {{name}}</h1>
+  <ul>
+    <li *ngFor="let name of list">
+      {{ name }}
+    </li>
+  </ul>
+  <ul>
+    <li *ngFor="let item of listObj">
+      My name is {{ item.name }} and my age is {{item.age}}. I am working for {{department}} department
+    </li>
+  </ul>
+</div>
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        Welcome to my modal popup!!!
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+  </div>
+</ng-template>
+<button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button> 
+<br>
+<!-- <app-user-list></app-user-list> -->

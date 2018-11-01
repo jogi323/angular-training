@@ -11,6 +11,10 @@ export class PostsComponent implements OnInit {
   constructor(private appService: AppService) { }
 
   ngOnInit() {
+    this.getPosts();
+  }
+
+  getPosts() {
     this.appService.getPosts().subscribe((res) => {
       console.log(res);
       this.postsList = res;
@@ -26,6 +30,7 @@ export class PostsComponent implements OnInit {
   updatePost() {
     this.appService.updatePost().subscribe((response) => {
       console.log(response);
+      // this.getPosts();
     });
   }
 

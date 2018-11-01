@@ -2,6 +2,8 @@
 <button class="btn btn-warning" (click)="updatePost()"> Update Post</button>
 <button class="btn btn-error" (click)="deletePost()"> Delete Post</button>
 
+<h1>List of posts:</h1>
+
 <div class="posts-list">
   <div *ngFor="let post of postsList">
     <h5>{{post.id}} - {{post.title}} - {{post.body}}</h5>
