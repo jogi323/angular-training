@@ -14,6 +14,7 @@ import { AppRoutingModule } from './/app-routing.module';
 import { PracticeComponent } from './practice/practice.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CommonPracticeComponent } from './common-practice/common-practice.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CommonPracticeComponent } from './common-practice/common-practice.compo
     PostsComponent,
     PracticeComponent,
     DashboardComponent,
-    CommonPracticeComponent
+    CommonPracticeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

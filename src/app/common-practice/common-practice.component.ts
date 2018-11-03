@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { AppService } from '../services/app.service' ;
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
@@ -16,7 +17,7 @@ export class CommonPracticeComponent implements OnInit {
   public list: any[] = ['Jogi', 'Ravi', 'Virat'];
   public listObj: any[] = [{name: 'jogi', age: 25}, {name: 'Ravi', age: 25}, {name: 'Virat', age: 29}];
   public department: string;
-  constructor(private appService: AppService, private modalService: NgbModal) {
+  constructor(private appService: AppService, private modalService: NgbModal, private router: Router) {
     this.department = 'UI';
     console.log(this.appService.name);
    }
@@ -35,5 +36,8 @@ export class CommonPracticeComponent implements OnInit {
       console.log(reason);
 
     });
+  }
+  navigateToLife() {
+    this.router.navigate(['/practice/lifecycle']);
   }
 }
