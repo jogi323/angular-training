@@ -11,6 +11,7 @@ export class UserListComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.jokes.push({setup: 'What did the cheese say when it looked in the mirror', punchline: 'Hello', hide: false, toggle: function() {}});
   }
 
   addJoke() {

@@ -9,6 +9,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserComponent } from './life-cycles/user/user.component';
 import { CommonPracticeComponent } from './common-practice/common-practice.component';
 import { LoginComponent } from './login/login.component';
+import { UserListComponent } from './life-cycles/user-list/user-list.component';
 
 const routes: Route[] = [
   { path: '', component: LoginComponent },
@@ -21,7 +22,7 @@ const routes: Route[] = [
         path: '', component: CommonPracticeComponent, pathMatch: 'full'
       },
       {
-        path: 'lifecycle', component: UserComponent
+        path: 'lifecycle', component: UserListComponent
       }
     ]
   },

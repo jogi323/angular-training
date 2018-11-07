@@ -29,14 +29,13 @@ OnDestroy {
   @Input('joke') joke: Joke;
   constructor() {
     console.log(`new - data is ${this.joke}`);
+    console.log(this.joke);
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log(`ngOnChanges - data is ${this.joke}`);
+    console.log(`ngOnChanges - data is ${this.joke.setup}`);
     console.log(this.joke);
-//     for (let key in changes) {
-//       console.log(`${key} changed.Current: ${changes[key].currentValue}.Previous: ${changes[key].previousValue}`);
-//     }
+
   }
 
   ngOnInit() {
