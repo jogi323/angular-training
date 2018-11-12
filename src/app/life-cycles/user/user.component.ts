@@ -66,6 +66,10 @@ OnDestroy {
     console.log('ngOnDestroy');
   }
 
+  printJogi() {
+    console.log('joginaidu');
+  }
+
 }
 class Joke {
   public setup: string;

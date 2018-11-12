@@ -10,6 +10,7 @@ import { UserComponent } from './life-cycles/user/user.component';
 import { CommonPracticeComponent } from './common-practice/common-practice.component';
 import { LoginComponent } from './login/login.component';
 import { UserListComponent } from './life-cycles/user-list/user-list.component';
+import { ParentComponent } from './component-interaction/parent/parent.component';
 
 const routes: Route[] = [
   { path: '', component: LoginComponent },
@@ -28,7 +29,8 @@ const routes: Route[] = [
   },
   { path: 'lazy-load1', loadChildren: './module1/module1.module#Module1Module'},
   { path: 'lazy-load2', loadChildren: './module2/module2.module#Module2Module'},
-  { path: 'admin', loadChildren: './admin/admin.module#AdminModule'}
+  { path: 'admin', loadChildren: './admin/admin.module#AdminModule'},
+  { path: 'componetinteraction', component: ParentComponent   }
 ];
 
 @NgModule({

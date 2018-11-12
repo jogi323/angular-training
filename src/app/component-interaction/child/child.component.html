@@ -1,0 +1,14 @@
+<div class="users-list">
+  <ul>
+    <li *ngFor="let user of userList">{{user.name}}- {{user.age}}</li>
+  </ul>
+</div>
+<div class="form col-md-6 offset-md-3">
+  <form>
+    <div class="form-group">
+      <input type="text" class="form-control" name="name" placeholder="enter your name....." [(ngModel)]="data.name">
+      <input type="number" class="form-control"  name="age" placeholder="enter your age....." [(ngModel)]="data.age">
+      <button class="btn btn-primary" (click)="submit(data)">Submit</button>
+    </div>
+  </form>
+</div>

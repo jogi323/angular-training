@@ -3,17 +3,32 @@ import { HEROES } from '../herosList';
 import { Hero } from '../herosList';
 import { HttpClient } from '@angular/common/http';
 
-import { Observable, of } from 'rxjs';
+import { Observable, of, BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AppService {
   public name = 'jogi';
-  constructor(private http: HttpClient) { }
+  private loggedInUser = new BehaviorSubject<Object>({});
 
+  constructor(private http: HttpClient) { }
+  private missionAnnouncedSource = new BehaviorSubject<string>('');
+  missionAnnounced$ = this.missionAnnouncedSource.asObservable();
+  announceMission(mission: string) {
+    console.log(mission);
+    this.missionAnnouncedSource.next(mission);
+  }
   getHeroesList(): Observable<Hero[]> {
     return of(HEROES);
+  }
+
+  getUserDetails() {
+    return this.loggedInUser.asObservable();
+  }
+
+  setUserDetails(data) {
+    this.loggedInUser.next(data);
   }
 
   getPosts(): Observable<any> {

@@ -5,7 +5,7 @@
 <h1>List of posts:</h1>
 
 <div class="posts-list">
-  <div *ngFor="let post of postsList">
+  <div *ngFor="let post of (postsList  | test: 'post')">
     <h5>{{post.id}} - {{post.title}} - {{post.body}}</h5>
   </div>
 </div>

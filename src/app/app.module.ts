@@ -15,6 +15,9 @@ import { PracticeComponent } from './practice/practice.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CommonPracticeComponent } from './common-practice/common-practice.component';
 import { LoginComponent } from './login/login.component';
+import { ParentComponent } from './component-interaction/parent/parent.component';
+import { ChildComponent } from './component-interaction/child/child.component';
+import { TestPipe } from './Pipes/test.pipe';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { LoginComponent } from './login/login.component';
     PracticeComponent,
     DashboardComponent,
     CommonPracticeComponent,
-    LoginComponent
+    LoginComponent,
+    ParentComponent,
+    ChildComponent,
+    TestPipe
   ],
   imports: [
     BrowserModule,
